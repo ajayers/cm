@@ -1,0 +1,32 @@
+version: '3.2'
+services:
+  db:
+    image: postgres
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+
+  web:
+    build: .
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    command:
+      - ./run.sh
+
+  test:
+    build: .
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    depends_on:
+      - db
+    environment:
+      - MIX_ENV=test

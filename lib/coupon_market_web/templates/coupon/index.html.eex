@@ -1,0 +1,26 @@
+<h2>Listing Coupons</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Value</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for coupon <- @coupons do %>
+    <tr>
+      <td><%= coupon.value %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: coupon_path(@conn, :show, coupon), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: coupon_path(@conn, :edit, coupon), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: coupon_path(@conn, :delete, coupon), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Coupon", to: coupon_path(@conn, :new) %></span>

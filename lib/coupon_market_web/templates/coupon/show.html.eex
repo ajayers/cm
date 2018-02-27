@@ -1,0 +1,13 @@
+<h2>Show Coupon</h2>
+
+<ul>
+
+  <li>
+    <strong>Value:</strong>
+    <%= @coupon.value %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: coupon_path(@conn, :edit, @coupon) %></span>
+<span><%= link "Back", to: coupon_path(@conn, :index) %></span>

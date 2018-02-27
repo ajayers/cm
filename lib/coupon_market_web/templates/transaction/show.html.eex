@@ -1,0 +1,13 @@
+<h2>Show Transaction</h2>
+
+<ul>
+
+  <li>
+    <strong>Purchased at:</strong>
+    <%= @transaction.purchased_at %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: transaction_path(@conn, :edit, @transaction) %></span>
+<span><%= link "Back", to: transaction_path(@conn, :index) %></span>

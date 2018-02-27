@@ -1,0 +1,13 @@
+<h2>Show Account</h2>
+
+<ul>
+
+  <li>
+    <strong>Balance:</strong>
+    <%= @account.balance %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: account_path(@conn, :edit, @account) %></span>
+<span><%= link "Back", to: account_path(@conn, :index) %></span>

@@ -1,2 +1,5 @@
-# cm
-cm
+# CouponMarket
+
+Start server
+
+$ docker-compose up web
