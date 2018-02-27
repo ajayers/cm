@@ -54,6 +54,8 @@ BEGIN
     -- mark coupon as sold
     -- TODO AJA: calc now once for consistency of purchased_at and sold_at
     UPDATE coupons SET sold_at = now() WHERE id = c.id;
+
+    RETURN transaction.id;
 END;
 $transaction_id$ LANGUAGE plpgsql;
 """
